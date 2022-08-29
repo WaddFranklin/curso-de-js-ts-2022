@@ -2,14 +2,16 @@ function init() {
     const divDataHora = document.querySelector('#data-hora');
     const data = new Date();
 
-    const dia = data.getDate();
+    /* const dia = data.getDate();
     const mes = formataMes(data.getMonth());
     const ano = data.getFullYear();
     const hora = data.getHours();
     const min = data.getMinutes();
-    const diaSemana = formataDiaSemana(data.getDay());
-
-    divDataHora.innerHTML = `${diaSemana}, ${dia} de ${mes} de ${ano} ${hora}:${min}`;
+    const diaSemana = formataDiaSemana(data.getDay()); */
+    /* divDataHora.innerHTML = `${diaSemana}, ${dia} de ${mes} de ${ano} ${hora}:${min}`; */
+    options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+    divDataHora.innerHTML = data.toLocaleDateString('pt-BR', options);
+    console.log(divDataHora.innerHTML);
 }
 
 function formataDiaSemana(dia) {
